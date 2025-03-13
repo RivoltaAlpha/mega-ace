@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 export default {
     entry: './src/index.js',
     output: {
-        path: path.resolve(process.cwd(), 'build'),
+        path: path.resolve(process.cwd(), 'dist'),
         filename: '[name].[contenthash].js',
         chunkFilename: '[name].[contenthash].chunk.js',
         publicPath: '/'
