@@ -41,8 +41,8 @@ const GameComponent = () => {
         "Q": "/assets/symbols/Q.png",
         "K": "/assets/symbols/K.png",
         "A": "/assets/symbols/A.png",
-        "WILD": "/assets/symbols/wild.png",
-        "SCATTER": "/assets/symbols/scatter.png",
+        "wild": "/assets/symbols/wild.png",
+        "scatter": "/assets/symbols/scatter.png",
         // Game UI elements from game_images
         "multiplier": "/assets/game_images/multiplier.png",
         "win_frame": "/assets/game_images/win_frame.png",

@@ -76,7 +76,7 @@ const Game = () => {
         if (winAmount > 0) {
             // Play win sounds based on multiplier and symbols
             const symbolType = grid[0][0]; // Get the winning symbol
-            const isGolden = symbolType === 'GOLD';
+            const isGolden = symbolType === 'gold';
             audioManager.playWinSound(symbolType.toLowerCase(), isGolden, multiplier, winAmount);
         }
     };
@@ -173,7 +173,7 @@ const Game = () => {
                                     
                                     // Ensure the image paths match the filenames in your assets directory
                                     const mappedSymbol = symbolMap[symbol] || symbol;
-                                    const imagePath = `/assets/${mappedSymbol.toLowerCase()}.png`;
+                                    const imagePath = `/assets/symbols/${mappedSymbol.toLowerCase()}.png`;
 
                                     return (
                                         <div 
