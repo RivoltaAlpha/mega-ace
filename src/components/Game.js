@@ -15,21 +15,10 @@ const Game = () => {
     const [winAmount, setWinAmount] = useState(0);
     const [multiplier, setMultiplier] = useState(1);
     const [winningLines, setWinningLines] = useState([]);
-    const [symbols] = useState(["GOLD", "DIAMOND", "CLUB", "HEART", "SPADE", "SMALL_JOKER", "BIG_JOKER"]);
+    const [symbols] = useState(["gold", "diamond", "club", "heart", "spade", "small_joker", "big_joker"]);
     const [isAnimating, setIsAnimating] = useState(false);
     const [autoSpin, setAutoSpin] = useState(false);
 
-    // Symbol mapping aligned with backend
-    const symbolMap = {
-        "GOLD": "gold",
-        "DIAMOND": "diamond",
-        "CLUB": "club",
-        "HEART": "heart",
-        "SPADE": "spade",
-        "SMALL_JOKER": "small_joker",
-        "BIG_JOKER": "big_joker",
-        "?": "question"
-    };
 
     useEffect(() => {
         const loadGame = async () => {
