@@ -23,6 +23,23 @@ export default {
                     from: "public/assets", 
                     to: "assets" 
                 },
+                { 
+                    from: "public/assets/symbols", 
+                    to: "assets" 
+                },
+                { 
+                    from: "public/assets/sounds", 
+                    to: "assets" 
+                },
+                { 
+                    from: "public/assets/ui", 
+                    to: "assets" 
+                },
+                { 
+                    from: "public/assets/index.css", 
+                    to: "assets" 
+                },
+                
                 // Add other static files/folders that need to be copied
             ],
         }),
