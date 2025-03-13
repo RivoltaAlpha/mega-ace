@@ -1,5 +1,4 @@
 node_modules
-dist 
  The  .gitignore  file is used to tell Git which files and directories to ignore. In this case, we are telling Git to ignore the  node_modules  directory and the  dist  directory. 
  Step 3: Install the required packages 
  To install the required packages, run the following command: 
