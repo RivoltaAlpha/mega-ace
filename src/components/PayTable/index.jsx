@@ -3,19 +3,19 @@ import './styles.css';
 
 const PayTable = ({ onClose }) => {
     const symbolPayouts = {
-        GOLD: { name: 'Gold', payouts: { 3: 100, 4: 200, 5: 500, 6: 1000 } },
-        DIAMOND: { name: 'Diamond', payouts: { 3: 80, 4: 160, 5: 400, 6: 800 } },
-        CLUB: { name: 'Club', payouts: { 3: 60, 4: 120, 5: 300, 6: 600 } },
-        HEART: { name: 'Heart', payouts: { 3: 50, 4: 100, 5: 250, 6: 500 } },
-        SPADE: { name: 'Spade', payouts: { 3: 40, 4: 80, 5: 200, 6: 400 } }
+        gold: { name: 'Gold', payouts: { 3: 100, 4: 200, 5: 500, 6: 1000 } },
+        diamond: { name: 'Diamond', payouts: { 3: 80, 4: 160, 5: 400, 6: 800 } },
+        club: { name: 'Club', payouts: { 3: 60, 4: 120, 5: 300, 6: 600 } },
+        heart: { name: 'Heart', payouts: { 3: 50, 4: 100, 5: 250, 6: 500 } },
+        spade: { name: 'Spade', payouts: { 3: 40, 4: 80, 5: 200, 6: 400 } }
     };
 
     const specialSymbols = {
-        SMALL_JOKER: {
+        small_joker: {
             name: 'Small Joker',
             description: 'Transforms into any regular symbol to create winning combinations'
         },
-        BIG_JOKER: {
+        big_joker: {
             name: 'Big Joker',
             description: 'Expands to cover multiple positions and transforms into matching symbols'
         }
