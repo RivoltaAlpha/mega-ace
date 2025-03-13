@@ -198,20 +198,20 @@ const GameUI = () => {
 export default GameUI;
 
 const SYMBOL_MAP = {
-    'SPADE': '/assets/symbols/spade.png',
-    'HEART': '/assets/symbols/heart.png',
-    'DIAMOND': '/assets/symbols/diamond.png',
-    'CLUB': '/assets/symbols/club.png',
-    'GOLD': '/assets/symbols/gold.png',
-    'ACE': '/assets/symbols/ace.png',
-    'SMALL_JOKER': '/assets/symbols/small_joker.png',
-    'BIG_JOKER': '/assets/symbols/big_joker.png',
+    'spade': '/assets/symbols/spade.png',
+    'heart': '/assets/symbols/heart.png',
+    'diamond': '/assets/symbols/diamond.png',
+    'club': '/assets/symbols/club.png',
+    'gold': '/assets/symbols/gold.png',
+    'ace': '/assets/symbols/ace.png',
+    'small_joker': '/assets/symbols/small_joker.png',
+    'big_joker': '/assets/symbols/big_joker.png',
     '7': '/assets/symbols/7.jpg',
     '8': '/assets/symbols/8.png',
     '9': '/assets/symbols/9.jpg',
     'J': '/assets/symbols/jack.png',
     'Q': '/assets/symbols/queen.png',
     'K': '/assets/symbols/king.png',
-    'WILD': '/assets/symbols/wild.png',
-    'SCATTER': '/assets/symbols/scatter.png'
+    'wild': '/assets/symbols/wild.png',
+    'scatter': '/assets/symbols/scatter.png'
 };
