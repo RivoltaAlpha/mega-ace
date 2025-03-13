@@ -1,5 +1,7 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
+
 
 export default {
     entry: './src/index.js',
@@ -9,6 +11,22 @@ export default {
         chunkFilename: '[name].[contenthash].chunk.js',
         publicPath: '/'
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './public/index.html',
+            filename: 'index.html',
+            inject: true
+        }),
+        new CopyPlugin({
+            patterns: [
+                { 
+                    from: "public/assets", 
+                    to: "assets" 
+                },
+                // Add other static files/folders that need to be copied
+            ],
+        }),
+    ],
     module: {
         rules: [
             {
