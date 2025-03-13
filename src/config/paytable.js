@@ -1,5 +1,5 @@
 export const SYMBOL_PAYOUTS = {
-    'GOLD': {
+    'gold': {
         3: 1.00,
         4: 1.25,
         5: 1.50,
@@ -27,28 +27,28 @@ export const SYMBOL_PAYOUTS = {
         6: 1.00,
         name: 'Jack'
     },
-    'SPADE': {
+    'spade': {
         3: 0.20,
         4: 0.30,
         5: 0.40,
         6: 0.50,
         name: 'Spades'
     },
-    'HEART': {
+    'heart': {
         3: 0.20,
         4: 0.30,
         5: 0.40,
         6: 0.50,
         name: 'Hearts'
     },
-    'DIAMOND': {
+    'diamonds': {
         3: 0.10,
         4: 0.15,
         5: 0.20,
         6: 0.30,
         name: 'Diamonds'
     },
-    'CLUB': {
+    'club': {
         3: 0.10,
         4: 0.15,
         5: 0.20,
@@ -79,12 +79,12 @@ export const SYMBOL_PAYOUTS = {
 };
 
 export const SPECIAL_SYMBOLS = {
-    'SMALL_JOKER': {
+    'small_joker': {
         name: 'Small Joker',
         type: 'wild',
         description: 'Substitutes for all symbols except scatters'
     },
-    'BIG_JOKER': {
+    'big_joker': {
         name: 'Big Joker',
         type: 'wild',
         description: 'Substitutes for all symbols except scatters'
