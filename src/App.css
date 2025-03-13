@@ -1,0 +1,198 @@
+/* General styling */
+body {
+    background: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Slot machine container */
+.slot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px; /* Adjusted width */
+    background: #222;
+    padding: 15px;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Multiplier bar */
+.multiplier-bar {
+    background: #992d2d;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 22px;
+    font-weight: bold;
+    color: gold;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 12px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.multiplier-bar.animate {
+    transform: scale(1.3);
+    background: #c0392b;
+}
+
+/* Reels grid */
+.reels {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    background: #333;
+    padding: 8px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 360px; /* Adjusted width for 6x6 grid */
+    height: 360px; /* Adjusted height for 6x6 grid */
+    align-items: center;
+    justify-content: center;
+    order: 0; /* Ensure reels are at the top */
+    margin-bottom: 40px;
+}
+
+/* Individual reel */
+.reel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Slot cell inside reel */
+.slot-cell {
+    width: 40px; /* Adjusted width */
+    height: 40px; /* Adjusted height */
+    background: #333;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px; /* Adjusted font size */
+    font-weight: bold;
+    color: gold;
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    transition: transform 0.3s ease-in-out, background 0.3s;
+}
+
+/* Winning reel effect */
+.reel.winning {
+    background: gold;
+    color: black;
+    border-color: white;
+    animation: winGlow 1s infinite alternate;
+}
+
+@keyframes winGlow {
+    0% { box-shadow: 0 0 5px gold; }
+    100% { box-shadow: 0 0 15px white; }
+}
+
+/* Combined glow effect */
+.reel.combined-glow {
+    animation: combinedGlow 1s infinite alternate;
+}
+
+@keyframes combinedGlow {
+    0% { box-shadow: 0 0 10px gold; }
+    100% { box-shadow: 0 0 20px white; }
+}
+
+/* Fade-out effect */
+.reel.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    justify-content: center;
+    order: 1; /* Ensure controls are below reels */
+}
+
+.balance-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px; /* Adjusted margin-top */
+    order: 1; /* Ensure balance is below controls */
+}
+
+.bet-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px; /* Adjusted margin-top */
+    order: 1; /* Ensure bet is below controls */
+}
+
+/* Buttons */
+.button {
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    background-color: gold;
+    color: black;
+    border-radius: 6px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.button:hover {
+    background-color: #ffcc00;
+    transform: scale(1.1);
+}
+
+/* Card suit colors */
+.red { color: red; }
+.black { color: white; }
+
+/* Mobile adjustments */
+@media (max-width: 500px) {
+    .slot-container {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .reels {
+        max-width: 340px;
+        height: 340px;
+    }
+
+    .reel {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}

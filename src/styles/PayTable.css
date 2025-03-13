@@ -1,0 +1,100 @@
+.paytable-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.paytable-content {
+    background: linear-gradient(145deg, #4d3b2e, #2a1810);
+    border: 3px solid #8a6253;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    color: #ffffff;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.paytable-grid {
+    display: grid;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.symbol-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.symbol-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.symbol-info img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.payouts {
+    display: flex;
+    gap: 15px;
+    color: #ffd700;
+}
+
+.special-symbols {
+    margin-top: 30px;
+    border-top: 2px solid #8a6253;
+    padding-top: 20px;
+}
+
+.special-symbol {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.special-symbol img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.special-symbol h4 {
+    color: #ffd700;
+    margin: 0 0 5px 0;
+}
+
+.special-symbol p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 14px;
+}

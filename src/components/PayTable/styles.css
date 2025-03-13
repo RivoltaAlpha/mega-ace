@@ -1,0 +1,120 @@
+.paytable-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.paytable-content {
+    background: #222;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #ffd700;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.close-button:hover {
+    color: #fff;
+}
+
+h2 {
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.paytable-grid {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.symbol-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #333;
+    border-radius: 8px;
+}
+
+.symbol-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.symbol-info img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.symbol-info span {
+    color: #fff;
+    font-size: 16px;
+}
+
+.payouts {
+    display: flex;
+    gap: 15px;
+    color: #ffd700;
+}
+
+.special-symbols {
+    margin-top: 30px;
+}
+
+.special-symbols h3 {
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.special-symbol {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #333;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.special-symbol img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.special-symbol h4 {
+    color: #ffd700;
+    margin: 0 0 5px 0;
+}
+
+.special-symbol p {
+    color: #fff;
+    margin: 0;
+    font-size: 14px;
+}

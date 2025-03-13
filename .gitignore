@@ -1,0 +1,23 @@
+node_modules
+dist 
+ The  .gitignore  file is used to tell Git which files and directories to ignore. In this case, we are telling Git to ignore the  node_modules  directory and the  dist  directory. 
+ Step 3: Install the required packages 
+ To install the required packages, run the following command: 
+ npm install --save-dev typescript ts-node nodemon 
+ The  typescript  package is the TypeScript compiler, the  ts-node  package is a TypeScript execution environment for Node.js, and the  nodemon  package is a utility that will monitor for any changes in your source and automatically restart your server. 
+ Step 4: Create a TypeScript configuration file 
+ Create a  tsconfig.json  file in the root of your project and add the following configuration: 
+ {
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true
+  }
+} 
+ The  tsconfig.json  file is used to configure the TypeScript compiler. In this configuration, we are telling the compiler to target ES6, use CommonJS modules, output the compiled files to the  dist  directory, use the  src  directory as the root directory, enable strict type-checking, and enable ES module interop. 
+ Step 5: Create a source directory 
+ Create a  src  directory in the root of your project and create a  server.ts  file inside the  src  directory with the following content: 
+ import express from 'express';
