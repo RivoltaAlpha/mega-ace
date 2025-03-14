@@ -48,13 +48,13 @@ class AssetLoader {
         try {
             // Load symbol images
             await Promise.all([
-                this.loadImage('GOLD', '/assets/symbols/gold.png'),
-                this.loadImage('DIAMOND', '/assets/symbols/diamond.png'),
-                this.loadImage('CLUB', '/assets/symbols/club.png'),
-                this.loadImage('HEART', '/assets/symbols/heart.png'),
-                this.loadImage('SPADE', '/assets/symbols/spade.png'),
-                this.loadImage('SMALL_JOKER', '/assets/symbols/small_joker.png'),
-                this.loadImage('BIG_JOKER', '/assets/symbols/big_joker.png'),
+                this.loadImage('gold', '/assets/symbols/gold.png'),
+                this.loadImage('diamond', '/assets/symbols/diamond.png'),
+                this.loadImage('club', '/assets/symbols/club.png'),
+                this.loadImage('heart', '/assets/symbols/heart.png'),
+                this.loadImage('spade', '/assets/symbols/spade.png'),
+                this.loadImage('small_joker', '/assets/symbols/small_joker.png'),
+                this.loadImage('big_joker', '/assets/symbols/big_joker.png'),
             ]);
 
             // Load sound effects using existing sounds
