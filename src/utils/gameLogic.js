@@ -1,11 +1,11 @@
 const SYMBOLS = {
-    GOLD: { value: 'GOLD', payout: 100, type: 'regular', weight: 1 },
-    DIAMOND: { value: 'DIAMOND', payout: 80, type: 'regular', weight: 2 },
-    CLUB: { value: 'CLUB', payout: 60, type: 'regular', weight: 3 },
-    HEART: { value: 'HEART', payout: 50, type: 'regular', weight: 4 },
-    SPADE: { value: 'SPADE', payout: 40, type: 'regular', weight: 5 },
-    SMALL_JOKER: { value: 'SMALL_JOKER', payout: 0, type: 'wild', weight: 2 },
-    BIG_JOKER: { value: 'BIG_JOKER', payout: 0, type: 'wild', weight: 1 }
+    gold: { value: 'gold', payout: 100, type: 'regular', weight: 1 },
+    diamond: { value: 'diamond', payout: 80, type: 'regular', weight: 2 },
+    club: { value: 'club', payout: 60, type: 'regular', weight: 3 },
+    heart: { value: 'heart', payout: 50, type: 'regular', weight: 4 },
+    spade: { value: 'spade', payout: 40, type: 'regular', weight: 5 },
+    small_joker: { value: 'small_joker', payout: 0, type: 'wild', weight: 2 },
+    big_joker: { value: 'big_joker', payout: 0, type: 'wild', weight: 1 }
 };
 
 class MegaAceGame {
@@ -31,11 +31,11 @@ class MegaAceGame {
 
     generateSymbol(col) {
         const symbol = this.getRandomSymbol();
-        // Golden cards only on reels 2-5
-        const isGolden = col >= 1 && col <= 4 && Math.random() < 0.15;
+        // golden cards only on reels 2-5
+        const isgolden = col >= 1 && col <= 4 && Math.random() < 0.15;
         return {
             type: symbol,
-            isGolden: isGolden,
+            isgolden: isgolden,
             jokerType: null,
             jokerSize: 0
         };
@@ -45,22 +45,22 @@ class MegaAceGame {
         for (const pos of winningPositions) {
             const symbol = this.grid[pos.row][pos.col];
             
-            if (symbol.isGolden) {
+            if (symbol.isgolden) {
                 // Convert to Small Joker
                 this.grid[pos.row][pos.col] = {
-                    type: 'SMALL_JOKER',
+                    type: 'small_joker',
                     jokerType: 'small',
                     jokerSize: 1
                 };
-            } else if (symbol.type === 'SMALL_JOKER') {
+            } else if (symbol.type === 'small_joker') {
                 // Convert to Big Joker
                 const size = Math.floor(Math.random() * 4) + 1;
                 this.grid[pos.row][pos.col] = {
-                    type: 'BIG_JOKER',
+                    type: 'big_joker',
                     jokerType: 'big',
                     jokerSize: size
                 };
-            } else if (symbol.type === 'BIG_JOKER') {
+            } else if (symbol.type === 'big_joker') {
                 await this.handleBigJokerEffect(pos);
             } else {
                 this.grid[pos.row][pos.col] = null;
@@ -76,7 +76,7 @@ class MegaAceGame {
             const randomSymbol = this.getRandomSymbol();
             this.grid[pos.row][pos.col] = {
                 type: randomSymbol,
-                isGolden: Math.random() < 0.15,
+                isgolden: Math.random() < 0.15,
                 jokerType: null,
                 jokerSize: 0
             };
@@ -157,12 +157,12 @@ class MegaAceGame {
     }
 
     processWildTransformations() {
-        // Process Gold Set eliminations to Small Jokers
+        // Process gold Set eliminations to Small Jokers
         let smallJokerPositions = [];
         this.grid.forEach((row, i) => {
             row.forEach((symbol, j) => {
-                if (symbol.value === 'GOLD' && Math.random() < 0.3) {
-                    this.grid[i][j] = SYMBOLS.SMALL_JOKER;
+                if (symbol.value === 'gold' && Math.random() < 0.3) {
+                    this.grid[i][j] = SYMBOLS.small_joker;
                     smallJokerPositions.push([i, j]);
                 }
             });
@@ -171,7 +171,7 @@ class MegaAceGame {
         // Process Small Jokers to Big Jokers
         if (smallJokerPositions.length > 0 && Math.random() < 0.2) {
             const randomPosition = smallJokerPositions[Math.floor(Math.random() * smallJokerPositions.length)];
-            this.grid[randomPosition[0]][randomPosition[1]] = SYMBOLS.BIG_JOKER;
+            this.grid[randomPosition[0]][randomPosition[1]] = SYMBOLS.big_joker;
             this.transformAdjacentSymbols(randomPosition[0], randomPosition[1]);
         }
     }
@@ -183,7 +183,7 @@ class MegaAceGame {
         for (let i = 0; i < numTransforms && positions.length > 0; i++) {
             const randomIndex = Math.floor(Math.random() * positions.length);
             const [row, col] = positions.splice(randomIndex, 1)[0];
-            this.grid[row][col] = SYMBOLS.SMALL_JOKER;
+            this.grid[row][col] = SYMBOLS.small_joker;
         }
     }
 
@@ -253,7 +253,7 @@ class MegaAceGame {
             let symbolsInColumn = this.grid.map(row => row[col]);
             let uniqueSymbols = new Set(symbolsInColumn.map(s => s.value));
             
-            if (uniqueSymbols.size === 1 || uniqueSymbols.has('SMALL_JOKER') || uniqueSymbols.has('BIG_JOKER')) {
+            if (uniqueSymbols.size === 1 || uniqueSymbols.has('small_joker') || uniqueSymbols.has('big_joker')) {
                 const baseSymbol = symbolsInColumn.find(s => s.type === 'regular');
                 if (baseSymbol) {
                     totalWinnings += baseSymbol.payout;
@@ -267,7 +267,7 @@ class MegaAceGame {
             const rowSymbols = this.grid[row];
             const uniqueSymbols = new Set(rowSymbols.map(s => s.value));
             
-            if (uniqueSymbols.size === 1 || uniqueSymbols.has('SMALL_JOKER') || uniqueSymbols.has('BIG_JOKER')) {
+            if (uniqueSymbols.size === 1 || uniqueSymbols.has('small_joker') || uniqueSymbols.has('big_joker')) {
                 const baseSymbol = rowSymbols.find(s => s.type === 'regular');
                 if (baseSymbol) {
                     totalWinnings += baseSymbol.payout;
@@ -372,7 +372,7 @@ class MegaAceGame {
         let goldCount = 0;
         this.grid.forEach(row => {
             row.forEach(symbol => {
-                if (symbol.value === 'GOLD') goldCount++;
+                if (symbol.value === 'gold') goldCount++;
             });
         });
 
@@ -517,7 +517,7 @@ class MegaAceGame {
                         const symbol = this.getRandomSymbol();
                         this.grid[row][col] = {
                             type: symbol,
-                            isGolden: col >= 1 && col <= 4 && Math.random() < 0.15,
+                            isgolden: col >= 1 && col <= 4 && Math.random() < 0.15,
                             jokerType: null,
                             jokerSize: 0
                         };

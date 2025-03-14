@@ -82,7 +82,7 @@ const GameUI = () => {
         // Play win sounds based on win amount and symbols
         if (result.winAmount > 0) {
             const symbolType = grid[0][0]; // Get the winning symbol
-            const isGolden = symbolType === 'GOLD';
+            const isGolden = symbolType === 'gold';
             audioManager.playWinSound(symbolType, isGolden, result.multiplier, result.winAmount);
         }
         
